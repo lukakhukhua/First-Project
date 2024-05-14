@@ -19,4 +19,17 @@ public class Registry {
 
     private short age;
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Registry other = (Registry) obj;
+        return id == other.id;
+    }
 }
