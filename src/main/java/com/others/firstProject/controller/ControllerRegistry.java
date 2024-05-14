@@ -5,6 +5,7 @@ import com.others.firstProject.model.mappers.RegistryMapper;
 import com.others.firstProject.services.RegistryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,5 +18,10 @@ public class ControllerRegistry {
     @PostMapping(value = "addRegistry")
     public void addRegistry(@RequestBody RegistryDto registryDto) {
         registryService.addRegistry(RegistryMapper.DtoToRegistry(registryDto));
+    }
+
+    @PutMapping(value = "editRegistry")
+    public void changeRegistry(@RequestBody RegistryDto registryDto) throws Exception {
+        registryService.changeRegistry(RegistryMapper.DtoToRegistry(registryDto));
     }
 }

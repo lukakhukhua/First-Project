@@ -4,6 +4,7 @@ import com.others.firstProject.model.entity.Registry;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -21,4 +22,19 @@ public class RegistryService {
         System.out.println("\n All registries: " + registryList.toString());
     }
 
+    public void changeRegistry(Registry registry) throws Exception {
+        // TODO: change registry to the database
+
+        boolean registryExists = registryList.remove(registry);
+
+        if (!registryExists) {
+            throw new Exception("No such registry exists");
+        }
+
+        registryList.add(registry);
+
+        System.out.println(registry + " has been changed");
+
+        System.out.println("\n All registries: " + registryList.toString());
+    }
 }
