@@ -4,7 +4,6 @@ import com.others.firstProject.model.entity.Registry;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -24,7 +23,7 @@ public class RegistryService {
 
         System.out.println(registry + " has been added to the database");
 
-        System.out.println("\n All registries: " + registryList.toString());
+        System.out.println("\n All registries: " + registryList);
     }
 
     public void changeRegistry(Registry registry) throws Exception {
@@ -40,6 +39,6 @@ public class RegistryService {
 
         System.out.println(registry + " has been changed");
 
-        System.out.println("\n All registries: " + registryList.toString());
+        System.out.println("\n All registries: " + registryList);
     }
 }
