@@ -13,10 +13,15 @@ public class RegistryService {
 
     private final List<Registry> registryList;
 
-    public void addRegistry(Registry registry) {
+    public void addRegistry(Registry registry) throws Exception {
         // TODO: add registry to the database
 
+        if (registryList.contains(registry)) {
+            throw new Exception("Registry already exists");
+        }
+
         registryList.add(registry);
+
         System.out.println(registry + " has been added to the database");
 
         System.out.println("\n All registries: " + registryList.toString());

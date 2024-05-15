@@ -16,7 +16,7 @@ public class ControllerRegistry {
     private final RegistryService registryService;
 
     @PostMapping(value = "addRegistry")
-    public void addRegistry(@RequestBody RegistryDto registryDto) {
+    public void addRegistry(@RequestBody RegistryDto registryDto) throws Exception {
         registryService.addRegistry(RegistryMapper.DtoToRegistry(registryDto));
     }
 
