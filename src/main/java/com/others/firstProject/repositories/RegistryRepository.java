@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -15,4 +16,6 @@ public interface RegistryRepository extends JpaRepository<Registry, Long> {
             "r.birthDate = :#{#registry.birthDate} AND r.relativeUserId = :#{#registry.relativeUserId}")
     Optional<Long> findRegistryId(@Param("registry") Registry registry);
 
+    @Query("SELECT r FROM Registry r WHERE r.relativeUserId = :relativeUserId")
+    List<Registry> findByRelativeUserId(@Param("relativeUserId") Long relativeUserId);
 }

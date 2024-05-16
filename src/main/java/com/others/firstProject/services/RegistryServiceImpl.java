@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -85,6 +86,11 @@ public class RegistryServiceImpl implements RegistryService {
         } else {
             throw new RuntimeException("RegistryUser not found with ID: " + registryUser.getId());
         }
+    }
+
+    @Override
+    public List<Registry> getUserRelativesById(Long userId) {
+        return registryRepository.findByRelativeUserId(userId);
     }
 
 }
