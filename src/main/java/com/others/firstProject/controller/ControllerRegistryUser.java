@@ -2,7 +2,6 @@ package com.others.firstProject.controller;
 
 import com.others.firstProject.model.dtos.RegistryDto;
 import com.others.firstProject.model.dtos.RegistryUserDto;
-import com.others.firstProject.model.entity.Registry;
 import com.others.firstProject.model.mappers.RegistryMapper;
 import com.others.firstProject.services.RegistryService;
 import lombok.RequiredArgsConstructor;
@@ -27,12 +26,8 @@ public class ControllerRegistryUser {
     }
 
     @GetMapping(value = "/relatives/{relativeUserId}")
-    public List<RegistryDto> findByRelativeUserId(@PathVariable String relativeUserId) throws Exception {
-        try{
-            return registryService.getUserRelativesById(Long.parseLong(relativeUserId)).stream().map(RegistryMapper::RegistryToDto).toList();
-        } catch (RuntimeException e) {
-           throw new RuntimeException("No RegistryUser found") ;
-        }
+    public List<RegistryDto> findByRelativeUserId(@PathVariable String relativeUserId) {
+        return registryService.getUserRelativesById(Long.parseLong(relativeUserId)).stream().map(RegistryMapper::RegistryToDto).toList();
     }
 
 }
