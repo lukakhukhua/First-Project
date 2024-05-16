@@ -12,7 +12,7 @@ public class RegistryMapper {
     public static RegistryDto RegistryToDto(Registry registry) {
         RegistryDto registryDto = new RegistryDto();
 
-//        registryDto.setId(registry.getId());
+        registryDto.setId(registry.getId());
         registryDto.setFirstName(registry.getFirstName());
         registryDto.setLastName(registry.getLastName());
 //        registryDto.setBirthDate(registry.getBirthDate());
@@ -25,7 +25,7 @@ public class RegistryMapper {
     public static Registry DtoToRegistry(RegistryDto registryDto) {
         Registry registry = new Registry();
 
-//        registry.setId(registryDto.getId());
+        registry.setId(registryDto.getId());
         registry.setFirstName(registryDto.getFirstName());
         registry.setLastName(registryDto.getLastName());
         registry.setBirthDate(registryDto.getBirthDate());
@@ -38,7 +38,7 @@ public class RegistryMapper {
     public static RegistryUserDto RegistryUserToDto(RegistryUser registryUser) {
         RegistryUserDto registryUserDto = new RegistryUserDto();
 
-//        registryUserDto.setId(registryUser.getId());
+        registryUserDto.setId(registryUser.getId());
         registryUserDto.setRegId(registryUser.getRegId());
         registryUserDto.setFirstName(registryUser.getFirstName());
         registryUserDto.setLastName(registryUser.getLastName());
@@ -53,7 +53,7 @@ public class RegistryMapper {
     public static RegistryUser DtoToRegistryUser(RegistryUserDto registryUserDto) {
         RegistryUser registryUser = new RegistryUser();
 
-//        registryUser.setId(registryUserDto.getId());
+        registryUser.setId(registryUserDto.getId());
         registryUser.setRegId(registryUserDto.getRegId());
         registryUser.setFirstName(registryUserDto.getFirstName());
         registryUser.setLastName(registryUserDto.getLastName());
