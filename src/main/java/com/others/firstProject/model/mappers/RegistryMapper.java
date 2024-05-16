@@ -57,9 +57,9 @@ public class RegistryMapper {
         registryUser.setRegId(registryUserDto.getRegId());
         registryUser.setFirstName(registryUserDto.getFirstName());
         registryUser.setLastName(registryUserDto.getLastName());
-        registryUserDto.setBirthDate(registryUser.getBirthDate());
-        registryUserDto.setMail(registryUser.getMail());
-        registryUserDto.setDescription(registryUser.getDescription());
+        registryUser.setBirthDate(registryUserDto.getBirthDate());
+        registryUser.setMail(registryUserDto.getMail());
+        registryUser.setDescription(registryUserDto.getDescription());
 //        registryUserDto.setAge(registryUser.getAge());
 
         return registryUser;
