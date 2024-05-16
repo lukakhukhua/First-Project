@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,5 +24,14 @@ public class RegistryDto {
 
     @JsonProperty("last_name")
     private String lastName;
+
+    @JsonProperty("birth_date")
+    private LocalDate birthDate;
+
+    @JsonProperty("relative_user_id")
+    private long relativeUserId;
+
+    @JsonProperty("age")
+    private short age;
 
 }
