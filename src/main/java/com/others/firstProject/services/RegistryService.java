@@ -1,44 +1,15 @@
 package com.others.firstProject.services;
 
 import com.others.firstProject.model.entity.Registry;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.others.firstProject.model.entity.RegistryUser;
 
-import java.util.List;
+public interface RegistryService {
 
-@Service
-@RequiredArgsConstructor
-public class RegistryService {
+    void addRegistry(Registry registry) throws Exception;
 
-    private final List<Registry> registryList;
+    void changeRegistry(Registry registry) throws Exception;
 
-    public void addRegistry(Registry registry) throws Exception {
-        // TODO: add registry to the database
+    void addRegistryUser(RegistryUser registryUser) throws Exception;
 
-        if (registryList.contains(registry)) {
-            throw new Exception("Registry already exists");
-        }
-
-        registryList.add(registry);
-
-        System.out.println(registry + " has been added to the database");
-
-        System.out.println("\n All registries: " + registryList);
-    }
-
-    public void changeRegistry(Registry registry) throws Exception {
-        // TODO: change registry to the database
-
-        boolean registryExists = registryList.remove(registry);
-
-        if (!registryExists) {
-            throw new Exception("No such registry exists");
-        }
-
-        registryList.add(registry);
-
-        System.out.println(registry + " has been changed");
-
-        System.out.println("\n All registries: " + registryList);
-    }
+    void changeRegistryUser(RegistryUser registryUser) throws Exception;
 }
